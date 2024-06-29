@@ -51,7 +51,6 @@
 		"elysia-basic-auth": "1.0.7",
 		"elysia-helmet": "2.0.0",
 		"elysia-http-error": "1.2.0",
-		"elysia-http-status-code": "1.0.9",
 		"elysia-ip": "1.0.7",
 		"elysia-requestid": "1.0.9",
 		"ioredis": "5.4.1",
