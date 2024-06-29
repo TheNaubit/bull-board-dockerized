@@ -7,6 +7,29 @@
 		"url": "https://albertadler.com"
 	},
 	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/TheNaubit/bull-board-dockerized.git"
+	},
+	"keywords": [
+		"bull",
+		"bullmq",
+		"bullboard",
+		"bull-board",
+		"monitor",
+		"queue",
+		"dashboard",
+		"docker",
+		"dockerized",
+		"docker-image",
+		"docker-container",
+		"docker-compose"
+	],
+	"main": "dist/bullboard.js",
+	"homepage": "https://github.com/TheNaubit/bull-board-dockerized",
+	"bugs": {
+		"url": "https://github.com/TheNaubit/bull-board-dockerized/issues"
+	},
 	"type": "module",
 	"scripts": {
 		"dev": "bun --watch src/index.ts",

@@ -126,7 +126,8 @@ docker compose down
 - Allow setting the uiConfig optional parameters using the `.env` file
 - Create tests for the HTTP server
 - Improve the documentation
-- Deploy it as a a single-file standalone executable (using the `bun` [compile option](https://bun.sh/docs/bundler/executables)). I need to wait for that since `bun` does not export `node_modules` into the binary (yet) [https://github.com/oven-sh/bun/issues/8967](https://github.com/oven-sh/bun/issues/8967).
+- Deploy it as a a single-file standalone executable (using the `bun` [compile option](https://bun.sh/docs/bundler/executables)). I need to wait for that since `bun` does not export `node_modules` into the binary (yet) [https://github.com/oven-sh/bun/issues/8967](https://github.com/oven-sh/bun/issues/8967)
+- Create a GitHub action to automatize the build process when there is a push to the main branch
 
 ## Notes
 
