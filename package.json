@@ -1,5 +1,5 @@
 {
-	"name": "bullboard-dockerized",
+	"name": "bull-board-dockerized",
 	"description": "This is a production-ready, heavily optimized, Docker image for bull-board. It allows you to monitor your bull queues without coding a web server just for that, just launch the Docker image!",
 	"version": "1.0.0",
 	"author": {
