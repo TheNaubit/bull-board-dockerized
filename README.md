@@ -131,4 +131,6 @@ docker compose down
 
 ## Notes
 
-Do not compile it to a single standalone executable with the `--minify` param since it breaks the internal code.
+- Do not compile it to a single standalone executable with the `--minify` param since it breaks the internal code.
+
+- When publishing, make sure to change `<my_new_version_code>` with the new version code (until I automatize the process).
