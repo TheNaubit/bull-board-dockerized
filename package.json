@@ -1,0 +1,45 @@
+{
+	"name": "bullboard-dockerized",
+	"description": "This is a production-ready, heavily optimized, Docker image for bull-board. It allows you to monitor your bull queues without coding a web server just for that, just launch the Docker image!",
+	"version": "1.0.0",
+	"author": {
+		"name": "Albert Adler",
+		"url": "https://albertadler.com"
+	},
+	"license": "MIT",
+	"type": "module",
+	"scripts": {
+		"dev": "bun --watch src/index.ts",
+		"start": "bun src/index.ts",
+		"compile:prod": "rm -rf ./dist/* && bun build --compile --sourcemap ./src/index.ts --outfile dist/bullboard",
+		"test": "bun test",
+		"docker:publish": "docker buildx build --tag nauverse/bull-board:latest --platform linux/arm64,linux/amd64 --builder container --no-cache --push ."
+	},
+	"dependencies": {
+		"@bogeychan/elysia-etag": "0.0.6",
+		"@bogeychan/elysia-logger": "0.0.22",
+		"@bull-board/api": "5.20.5",
+		"@elysiajs/static": "1.0.3",
+		"@nauverse/make-url": "1.10.8",
+		"bull": "4.14.0",
+		"bullmq": "5.8.3",
+		"ejs": "3.1.10",
+		"elysia": "1.0.25",
+		"elysia-basic-auth": "1.0.7",
+		"elysia-helmet": "2.0.0",
+		"elysia-http-error": "1.2.0",
+		"elysia-http-status-code": "1.0.9",
+		"elysia-ip": "1.0.7",
+		"elysia-requestid": "1.0.9",
+		"ioredis": "5.4.1",
+		"ip-anonymize": "0.1.0",
+		"pino": "9.2.0",
+		"zod": "3.23.8"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.8.3",
+		"@types/bun": "1.1.6",
+		"@types/ejs": "3.1.5"
+	},
+	"trustedDependencies": ["@biomejs/biome", "msgpackr-extract"]
+}
