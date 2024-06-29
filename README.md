@@ -2,6 +2,8 @@
 
 ![Docker Pulls](https://img.shields.io/docker/pulls/nauverse/bull-board)
 
+![Repo social image](https://github.com/TheNaubit/bull-board-dockerized/blob/21e83dbc080475d49bf749e68f3e2a7cffd5f9ca/header.png?raw=true)
+
 This is a production-ready, heavily optimized, Docker image for [bull-board](https://github.com/felixmosh/bull-board). It allows you to monitor your bull queues without coding a web server just for that, just launch the Docker image!
 
 It supports `bull` and `bullmq`.
