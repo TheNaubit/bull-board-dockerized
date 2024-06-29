@@ -1,4 +1,4 @@
-# Bull Board Dockerized
+# ⚡ Bull Board Dockerized
 
 ![Docker Pulls](https://img.shields.io/docker/pulls/nauverse/bull-board)
 
