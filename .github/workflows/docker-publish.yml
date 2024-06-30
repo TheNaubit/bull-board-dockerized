@@ -4,8 +4,8 @@ on:
   # Trigger the action manually from the UI
   workflow_dispatch:
   release:
-    types:
-      - published
+    types: [published]
+    branches: [main]
 
 env:
   REGISTRY: docker.io
