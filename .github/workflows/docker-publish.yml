@@ -1,6 +1,8 @@
 name: Docker
 
 on:
+  # Trigger the action manually from the UI
+  workflow_dispatch:
   release:
     types:
       - published
