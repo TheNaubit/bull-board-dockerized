@@ -22,8 +22,12 @@ jobs:
         with:
           node-version: "lts/*"
 
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
       - name: Install dependencies
-        run: npm install
+        run: bun install
 
       - name: Release
         env:
