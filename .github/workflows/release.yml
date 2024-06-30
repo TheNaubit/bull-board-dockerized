@@ -31,5 +31,7 @@ jobs:
 
       - name: Release
         env:
+          # I have to use a custom token because the default one (secrets.GITHUB_TOKEN) won't
+          # trigger the Docker Publish workflow (https://github.com/orgs/community/discussions/25281#discussioncomment-3247262).
           GITHUB_TOKEN: ${{ secrets.GPA_TOKEN }}
         run: npx semantic-release -b main
