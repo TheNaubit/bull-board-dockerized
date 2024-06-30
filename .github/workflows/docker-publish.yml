@@ -1,11 +1,9 @@
 name: Docker
 
 on:
-  push:
-    tags: ["v*.*.*"]
-  pull_request:
-    branches: ["main"]
-  workflow_dispatch:
+  release:
+    types:
+      - published
 
 env:
   REGISTRY: docker.io
@@ -55,8 +53,8 @@ jobs:
           tags: |
             # set latest tag for main branch
             type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', 'main') }}
-            type=ref,event=branch
-            type=ref,event=pr
+            # type=ref,event=branch
+            # type=ref,event=pr
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
 
@@ -76,17 +74,9 @@ jobs:
           provenance: mode=max
           sbom: true
 # https://docs.github.com/en/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds#generating-build-provenance-for-container-images
-#      - name: Generate artifact attestation
-#        uses: actions/attest-build-provenance@v1
-#        with:
-#          subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-#          subject-digest: 'sha256:fedcba0...'
-#          push-to-registry: true
-
-#      - name: Docker Hub Description
-#        uses: peter-evans/dockerhub-description@v3
-#        if: ${{ github.event_name != 'pull_request' }}
-#        with:
-#          username: ${{ env.REGISTRY_USERNAME }}
-#          password: ${{ secrets.DOCKERHUB_TOKEN }}
-#          repository: ${{ env.IMAGE_NAME }}
+     - name: Generate artifact attestation
+       uses: actions/attest-build-provenance@v1
+       with:
+         subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+         subject-digest: ${{ steps.build-and-push.outputs.digest }}
+         push-to-registry: true
