@@ -51,7 +51,7 @@
 		"bull": "4.14.0",
 		"bullmq": "5.8.3",
 		"ejs": "3.1.10",
-		"elysia": "1.0.25",
+		"elysia": "1.0.26",
 		"elysia-basic-auth": "1.0.7",
 		"elysia-helmet": "2.0.0",
 		"elysia-http-error": "1.2.0",
