@@ -17,8 +17,8 @@ RUN bun run build:prod
 FROM oven/bun:distroless
 
 # Copy the compiled standalone file from the builder stage
-COPY --from=builder  --chown=nonroot:nonroot /home/bun/app/node_modules /home/nonroot/app/node_modules
-COPY --from=builder --chown=nonroot:nonroot /home/bun/app/dist /home/nonroot/app/dist
+COPY --from=builder  --chown=nonroot:nonroot /home/bun/app/node_modules /node_modules
+COPY --from=builder --chown=nonroot:nonroot /home/bun/app/dist /dist
 
 ENV NODE_ENV="production"
 
@@ -27,4 +27,4 @@ USER nonroot
 # Set the entrypoint to the compiled standalone file
 EXPOSE 3000
 ENTRYPOINT ["bun"]
-CMD ["/home/nonroot/app/dist/index.js"]
+CMD ["/dist/index.js"]
