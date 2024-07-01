@@ -1,6 +1,6 @@
 services:
   # redis:
-  #   container_name: redis
+  #   container_name: redis-bullboard-docker
   #   restart: unless-stopped
   #   environment:
   #     REDIS_PASSWORD: ${REDIS_PASSWORD}
@@ -10,7 +10,7 @@ services:
   #   ports:
   #     - "6379:6379"
   #   volumes:
-  #     - redis_data:/data
+  #     - redis-bullboard-docker_data:/data
   #   command:
   #     [
   #       "redis-server",
@@ -41,8 +41,8 @@ services:
       USER_USERNAME: ${USER_LOGIN}
       USER_PASSWORD: ${USER_PASSWORD}
       LOG_ANONYMIZE_IP: "true"
-    # depends_on:
-    #   - redis
+  # depends_on:
+  #   - redis
 
 volumes:
-  redis_data:
+  redis-bullboard-docker_data:
