@@ -10,15 +10,21 @@ COPY . .
 # Install dependencies
 RUN bun install --frozen-lockfile --ignore-scripts --production
 
+# Build the project
+RUN bun run build:prod
+
 # Stage 2: Create the final distroless image
 FROM oven/bun:distroless
 
 # Copy the compiled standalone file from the builder stage
-COPY --from=builder /home/bun/app/ /
+COPY --from=builder  --chown=nonroot:nonroot /home/bun/app/node_modules /node_modules
+COPY --from=builder --chown=nonroot:nonroot /home/bun/app/dist /dist
 
 ENV NODE_ENV="production"
+
+USER nonroot
 
 # Set the entrypoint to the compiled standalone file
 EXPOSE 3000
 ENTRYPOINT ["bun"]
-CMD ["/src/index.ts"]
+CMD ["/dist/index.js"]
