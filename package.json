@@ -47,7 +47,7 @@
 		"@bogeychan/elysia-logger": "0.0.22",
 		"@bull-board/api": "5.20.5",
 		"@elysiajs/static": "1.0.3",
-		"@nauverse/make-url": "1.10.8",
+		"@nauverse/make-url": "1.10.13",
 		"bull": "4.14.0",
 		"bullmq": "5.8.3",
 		"ejs": "3.1.10",
