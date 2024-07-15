@@ -46,7 +46,7 @@
 	"dependencies": {
 		"@bogeychan/elysia-etag": "0.0.6",
 		"@bogeychan/elysia-logger": "0.0.22",
-		"@bull-board/api": "5.20.5",
+		"@bull-board/api": "5.21.0",
 		"@elysiajs/static": "1.0.3",
 		"@nauverse/make-url": "1.10.13",
 		"bull": "4.15.1",
