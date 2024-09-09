@@ -50,7 +50,7 @@
 		"@elysiajs/static": "1.0.3",
 		"@nauverse/make-url": "1.10.13",
 		"bull": "4.15.1",
-		"bullmq": "5.10.3",
+		"bullmq": "5.12.14",
 		"ejs": "3.1.10",
 		"elysia": "1.0.26",
 		"elysia-basic-auth": "1.0.7",
